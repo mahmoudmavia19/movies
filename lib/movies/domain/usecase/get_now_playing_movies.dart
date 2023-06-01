@@ -1,16 +1,19 @@
+import 'package:dartz/dartz.dart';
 import 'package:movies/core/utils/base_usecase.dart';
 import 'package:movies/movies/domain/entities/movies.dart';
 import 'package:movies/movies/domain/repository/base_movies_repository.dart';
 
-class GetNowPLayingMoviesUseCase implements BaseUseCase<void,List<Movies>>{
+import '../../../core/error/failure.dart';
+
+class GetNowPLayingMoviesUseCase implements BaseUseCase<void,Either<Failure, List<Movies>>>{
 
  final BaseMoviesRepository baseMoviesRepository ;
 
  GetNowPLayingMoviesUseCase(this.baseMoviesRepository);
 
   @override
-  Future<List<Movies>> execute(input)  async{
-   return await baseMoviesRepository.getNowPlaying() ;
+  Future<Either<Failure, List<Movies>>> execute(input)  async{
+   return await baseMoviesRepository.getNowPlayingMovies() ;
   }
 
 

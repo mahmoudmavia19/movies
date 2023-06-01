@@ -5,5 +5,6 @@ class AppConstance {
 
 class EndPoints {
   static String nowPlaying = '/movie/now_playing';
+  static String results = 'results';
 
 }
