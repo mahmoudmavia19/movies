@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:movies/core/utils/di.dart';
 import 'package:movies/movies/persentation/screens/movies_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized() ;
   await initApp();
+
   runApp(const MyApp());
 }
 
@@ -17,7 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
+        scaffoldBackgroundColor: Colors.black,
+        textTheme:GoogleFonts.poppinsTextTheme(),
+        iconTheme: const IconThemeData(color: Colors.white),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
